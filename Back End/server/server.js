@@ -3,6 +3,7 @@ const express = require("express");
 const cors = require("cors");
 const connectDB = require("./config/db");
 const bookingRoutes = require("./routes/bookingRoutes");
+const adminRoutes = require("./routes/adminRoutes");
 
 // Initialize Express
 const app = express();
@@ -17,6 +18,7 @@ app.use(require("morgan")("dev")); // Logs requests to the console
 
 // Routes
 app.use("/api/booking", bookingRoutes);
+app.use("/api/admin", adminRoutes);
 
 // Health Check Endpoint
 app.get("/", (req, res) => {
